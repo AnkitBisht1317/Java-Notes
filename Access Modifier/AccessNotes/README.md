@@ -28,7 +28,7 @@ static
 if a class declear as public then we can access that class anywhere.
 
 ### Error
-![Image](https://github.com/user-attachments/assets/c3b847ae-ca0c-42e9-b799-7c10744d76bc)
+![Image](https://github.com/user-attachments/assets/53fbf0e0-3727-40b9-8889-e64c857a64a8)
 ### Without Error
 ![Image](https://github.com/user-attachments/assets/732e3a2c-85d5-4334-a411-166ec59646da)
 if class Demo1 is not public then while compile Demo2 class will get compile time error (pack1.Demo1 is not in pack1 : cannot be accessed outside pakage)
@@ -36,5 +36,7 @@ if class Demo1 is not public then while compile Demo2 class will get compile tim
 ## 2. Default Class
 if a class declear default then we access the class only current package. that it outside package we cannot access.(it also known as package level access) 
 ### Error
-![Image](https://github.com/user-attachments/assets/c3b847ae-ca0c-42e9-b799-7c10744d76bc)
+![Image](https://github.com/user-attachments/assets/53fbf0e0-3727-40b9-8889-e64c857a64a8)
+
 ### Witout Error
+![Image](https://github.com/user-attachments/assets/4ed911b2-7d93-4788-ad3e-4519f040fa89)
