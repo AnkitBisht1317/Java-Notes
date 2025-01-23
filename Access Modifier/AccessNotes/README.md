@@ -49,6 +49,17 @@ static
   redefine the method based on there requirement this process is called overriding.
 - if parent class method declear as final we not overrride the method in child class.
 ### Error
+- we declear parent class as final so we don't override final class in parent that's why error occures. if we remove final keyword in parent class then error remove
 ![Image](https://github.com/user-attachments/assets/8000eaa4-748d-49c7-b453-afb50e4478ed)
 
 #### Final Class : 
+- If a class declear as final we can not extends functionality of that class. that is we can not create child class of that class.
+- Inheritance not possible using final class.
+
+### Error
+![Image](https://github.com/user-attachments/assets/d1534b31-8980-4d68-98d6-7fe40c0ce8c2)
+###### Note : 
+- every method parsent in final class also a final , but every variable parsent inside final class in not be final.
+- Final modifier is secure.
+- Disadvantage of final modifier is we can not implimantation Inheritance and Polymorphism which is key concepts of OOPS.
+- If no specific requirement then not use final keyword. 
