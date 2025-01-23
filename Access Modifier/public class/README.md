@@ -28,7 +28,7 @@ static
 if s class declear as public then we can access that class anywhere.
 
 # Error
-
+![Image](https://github.com/user-attachments/assets/c3b847ae-ca0c-42e9-b799-7c10744d76bc)
 # Without Error
-
+![Image](https://github.com/user-attachments/assets/732e3a2c-85d5-4334-a411-166ec59646da)
 if class Demo1 is not public then while compile Demo2 class will get compile time error (pack1.Demo1 is not in pack1 : cannot be accessed outside pakage)
