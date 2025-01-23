@@ -40,4 +40,4 @@ if a class declear default then we access the class only current package. that i
 ![Image](https://github.com/user-attachments/assets/53fbf0e0-3727-40b9-8889-e64c857a64a8)
 
 ### Witout Error
-![Image](https://github.com/user-attachments/assets/4ed911b2-7d93-4788-ad3e-4519f040fa89)
+![Image](https://github.com/user-attachments/assets/f542c782-459c-4896-ad81-6d570af1e6e4)
