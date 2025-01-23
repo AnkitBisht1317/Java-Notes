@@ -25,7 +25,7 @@ protected
 static
 ```
 ## 1. Public Classs
-if s class declear as public then we can access that class anywhere.
+if a class declear as public then we can access that class anywhere.
 
 # Error
 ![Image](https://github.com/user-attachments/assets/c3b847ae-ca0c-42e9-b799-7c10744d76bc)
