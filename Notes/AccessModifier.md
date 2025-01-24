@@ -43,7 +43,7 @@ static
 ![Image](https://github.com/user-attachments/assets/f542c782-459c-4896-ad81-6d570af1e6e4)
 
 ## 3. Final Modifier 
-- final is a modifier applicable for classes,variable and method.
+- final is a modifieapplir applicable for classes,variable and method.
 #### Final Method : 
 - whatever method parent has by default available to the child using inheritance if the child not satisfied parent method implimantation then child is allowed 
   redefine the method based on there requirement this process is called overriding.
@@ -63,3 +63,26 @@ static
 - Final modifier is secure.
 - Disadvantage of final modifier is we can not implimantation Inheritance and Polymorphism which is key concepts of OOPS.
 - If no specific requirement then not use final keyword. 
+
+## 3. Abstract Modifier : 
+- abstract is a modifier applicable for class and method but not for variable.
+
+#### Abstract Method : 
+- Even thus we don't know about implementation still we can declare a method with abstract method.
+- In abstract method declaration is available but implementation is not . it's declaration ends with semicolon.
+
+``` java
+public abstract void m1(); ✅
+public abstract void m1() ❌
+```
+- Child class is reponsible to provide implementation to parent class abstract method.
+``` java
+abstract class vechile{
+abstract public int requiredWheel();
+}
+class Bus extends vechile{
+public int  requiredWheel(){
+return 7;
+}
+}
+```
