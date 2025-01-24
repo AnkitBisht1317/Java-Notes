@@ -86,3 +86,13 @@ return 7;
 }
 }
 ```
+- By default abstract method in parent class we provided guidelines for child class. that is which method compulsory child has to implement.
+- Abstract method never talk about implemantation if any modifier not talk about implemantation that is from illegal combination for abstract modifierrs.
+  ```
+  final
+  native
+  synchronized
+  static
+  private
+  strictfp
+  ```
