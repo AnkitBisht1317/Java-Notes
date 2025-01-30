@@ -96,3 +96,50 @@ return 7;
   private
   strictfp
   ```
+#### Abstract Class :
+- For any java class if we not allow to create object(Because of partial implementation) such type of class is called abstract class.
+- Abstract class instantiation is not possible.
+```java
+abstract class Animal {
+abstract void makeSound();
+}
+class Dog extends Animal {
+void makeSound() {
+System.out.println("Woof!");
+}
+}
+public class Main {
+public static void main(String[] args) {
+// Animal a = new Animal(); // ❌ ERROR: Cannot instantiate an abstract class
+Dog dog = new Dog(); // ✅ Instantiating a concrete subclass
+dog.makeSound(); // Output: Woof!
+}
+}
+```
+- if a class contain atleast one abstract method that compulsory we declare class as abstract class otherwise get compile time error.
+- Abstract class can contain zero number abstract method.
+  ```java
+  abstract HTTPServer{
+  doGET();
+  doPOST();
+  }
+  ```
+  - If we are extends abstract class then each and every abstract method of parent class should provide implementation otherwise we declare child class is abstract.in this case next level child class provide to implementation.
+ ```java
+abstract class HTTPServer {
+ abstract void doGET();
+ abstract void doPOST();
+}
+abstract class SecureHTTPServer extends HTTPServer {
+abstract void doGET();
+}
+```
+## 4.Private Modifier : 
+- If a member is private then we access that member only within the class , outside the class we can not access.
+- Abstrsct method sholud be available to the child class to provide implementation whereas the provate method not available to the child class . Hence private abstract combination is illegal for method.
+
+## 5. Protected Member : 
+         private = default + public 
+- If member declare as protected then we access that member any where that current package but outside the package access only child class.
+- we can access protected member within the current package anywhere using parent and child class refrence.
+- But access protected member iin outside package only in the child class . 
