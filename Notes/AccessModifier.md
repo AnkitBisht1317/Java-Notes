@@ -134,12 +134,16 @@ abstract class SecureHTTPServer extends HTTPServer {
 abstract void doGET();
 }
 ```
-## 4.Private Modifier : 
+## 4 .Private Modifier : 
 - If a member is private then we access that member only within the class , outside the class we can not access.
 - Abstrsct method sholud be available to the child class to provide implementation whereas the provate method not available to the child class . Hence private abstract combination is illegal for method.
 
 ## 5. Protected Member : 
-         private = default + public 
+         protected = default + child 
 - If member declare as protected then we access that member any where that current package but outside the package access only child class.
 - we can access protected member within the current package anywhere using parent and child class refrence.
 - But access protected member iin outside package only in the child class . 
+
+## 6. Synchronized Modifier : 
+- Synchronized is a modifier applicable for method and block but not classes and variable.
+- If multiple thread try to operate at a time on the same java object then there is chance of data inconsistancy problem this is raised condition we can overcome this problem by using synchronized keyword. 
