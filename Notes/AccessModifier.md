@@ -146,4 +146,32 @@ abstract void doGET();
 
 ## 6. Synchronized Modifier : 
 - Synchronized is a modifier applicable for method and block but not classes and variable.
-- If multiple thread try to operate at a time on the same java object then there is chance of data inconsistancy problem this is raised condition we can overcome this problem by using synchronized keyword. 
+- If multiple thread try to operate at a time on the same java object then there is chance of data inconsistancy problem this is raised condition we can overcome this problem by using synchronized keyword. if a method or block declare as synchronized then at a time only one thread allow to excute that method or block or given object. so that data inconsistancy problem will be removed.
+- But main disadvantage of this it increase wating time of thread and create performance problem. Hence there is no specific requriment then it is not recommand to use synchronized keyword.
+- Abstract and synchronized is illegal combination because synchronized method contain implemantation.
+```java
+  abstract class Example {
+    abstract synchronized void myMethod();  ❌ 
+}
+```
+## 7. Native Modifier : 
+- Native is modifier applicable for only method and we can not apply any where.
+- The method which are implemented non-java (Mostly c or c++) are called native method .
+- The main object native keyword are :
+  - To improve performance of system.
+  - To achive mission level or memory level comunication.
+- The main disadvantage of native modifier it break platfrom independent nature of java.
+
+## 8. Transient Modifier : 
+- Transient modifier is only use for variable.
+- we can use it in serialization contest , At thr time of serialization if we don't want to save value of a prticular variable to need to security constraint then we should that variable as transient.
+- At the time of serialization JVM ignore orignal value of transient variable and save default value of file.
+
+## 9. Volatile Modifier : 
+- Volatile is modifier applicable only for variable and we can't apply any whrer else.
+- If a value of variable keep on changing by multiple thread then there may be chance of data inconsistancy problem.we solve this problem by using volatile variable.
+- If a variable declare as volatile then every thread JVM will create a spreate copy.
+- Every modification perfrom bt the thread will take place in local copy there is no effort of remaining thread.
+- the disadvantage it perfromance down.
+- when there is not required no use volatile keyword.
+- final and variable is illegal combination for variable.
