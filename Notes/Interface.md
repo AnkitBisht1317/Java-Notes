@@ -7,7 +7,7 @@ I have defined the interface in 3 ways.
 2. From the client's perspective, an interface defines the set of services they expect to receive. From the service provider's perspective, an interface defines the set of services they are offering. Therefore, any agreement or contract between the client and the service provider is referred to as an interface.
     - Example -Through the bank ATM's GUI screen, the bank showcases the set of services it offers. At the same time, the same GUI screen represents the set of services that the customer is willing to accept. Therefore, this GUI screen acts as a contract or agreement between the customer and the bank, ensuring that both parties are aligned on the services being provided and accessed. It serves as a common interface that facilitates the interaction and defines the terms of the transaction.
 
-3. Inside Interface every method is always abstract whether we are declaer or not , Hence interface is consider as 100% pure abstract class.
+3. Inside Interface every method is always abstract whether we are declare or not , Hence interface is consider as 100% pure abstract class.
 
 ###### summarise definition 
 Any service requirement specification or any contract between client and service provider or 100% pure abstract class in nothing as Interface.
