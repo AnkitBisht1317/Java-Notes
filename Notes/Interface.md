@@ -2,87 +2,45 @@
 I have defined the interface in 3 ways.
 1. Any service reqirement specification it consider as an interface.
    - Example - JDBC API access requirement specification to delevop database driver database vander is responsible JDBC API.
-    ## Implementation Class Diagram
+             - Servlet API access requirement specification to develop web server , web server vander responsible to implement servlet API.
+     
+2. From the client's perspective, an interface defines the set of services they expect to receive. From the service provider's perspective, an interface defines the set of services they are offering. Therefore, any agreement or contract between the client and the service provider is referred to as an interface.
+    - Example -Through the bank ATM's GUI screen, the bank showcases the set of services it offers. At the same time, the same GUI screen represents the set of services that the customer is willing to accept. Therefore, this GUI screen acts as a contract or agreement between the customer and the bank, ensuring that both parties are aligned on the services being provided and accessed. It serves as a common interface that facilitates the interaction and defines the terms of the transaction.
 
-This diagram represents the class relationships for the JdBA API, including MySQL, Oracle Driver, and DBQ Driver.
+3. Inside Interface every method is always abstract whether we are declaer or not , Hence interface is consider as 100% pure abstract class.
 
-### UML Diagram
+###### summarise definition 
+Any service requirement specification or any contract between client and service provider or 100% pure abstract class in nothing as Interface.
 
-```plantuml
-@startuml
-
-interface DatabaseOperation {
+- Whenever we implement any interface for each every method of that interface we have to provide implemeantation otherwise we have to declear class as abstract then next level child class responsibility to provide implementation.
+- Every interface method always public and abstract whether we declare or not , Hence we are declare interface method compulsory we should declare as public otherwise we will get compile time error.
+```java
+interface MyInterface {
+    void show();  
+    void display();
+}
+abstract class MyAbstractClass implements MyInterface {  
+    public void show() {  // when we implement abstract method then public modifier use
+        System.out.println("Show method implemented");
+    }
+    // display() is not implemented, so we must declare the class as abstract.
 }
 
-abstract class Database {
+class MyConcreteClass extends MyAbstractClass {
+    public void display() {  // Now providing implementation for display()
+        System.out.println("Display method implemented");
+    }
+    
+    public static void main(String[] args) {
+        MyConcreteClass obj = new MyConcreteClass();
+        obj.show();
+        obj.display();
+    }
 }
-
-class MySQL {
-}
-
-class PropertyManager {
-}
-
-Database <|-- MySQL
-DatabaseOperation <|-- Database
-DatabaseOperation "1..*" -left-> "1" OrderBean : persists
-MySQL "1..*" -left-> "1" PropertyManager : uses
-
-class OrderBean {
-}
-
-class CustomerBean {
-}
-
-class StoreBean {
-}
-
-class PaperBean {
-}
-
-abstract class PrintJobBean {
-}
-
-class BusinessCardBean {
-}
-
-class BusinessCardDesigner {
-}
-
-interface Model {
-}
-
-class BusinessCardCenteredModel {
-}
-
-class Coyote {
-}
-
-class GIFEncoder {
-}
-
-OrderBean o-- "0..*" CustomerBean : places
-CustomerBean "0..1" -- "0..*" StoreBean : has
-OrderBean "1" o-- "1..*" PrintJobBean : creates
-PrintJobBean "1" o-- "1" Model : has a
-Model <|-- BusinessCardCenteredModel
-PrintJobBean <|-- BusinessCardBean
-BusinessCardBean "1" -- "1" BusinessCardDesigner : draws
-Coyote --> GIFEncoder : uses
-
-@enduml
 ```
-
-### How to View the Diagram
-To visualize this diagram, you can use:
-- [PlantUML Online](https://www.plantuml.com/plantuml/uml/)
-- Local PlantUML setup with Graphviz
-- Integrated PlantUML renderers in IDEs like VS Code or IntelliJ
-
-### Dependencies
-- **JdBA API**: Core logic and database operations
-- **MySQL, Oracle Driver, DBQ Driver**: Database connections
-- **PropertyManager**: Configuration handling
-
-This diagram provides a structured view of how components interact within the system.
-
+## Extends vs Implements
+- A class can extends only one class at a time.
+- An interface can extends any number of interface at a time.
+- A class implements any number of interface at a time.
+- A class extends another class and can implements any number of interface at a time.
+- if we extends and implements at a time then we should extends first and then implements otherwise we get error.
