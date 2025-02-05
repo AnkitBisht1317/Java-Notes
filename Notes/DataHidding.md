@@ -3,7 +3,8 @@
 - After validation outside person can access our internal data.
     - Eaxmple - After providing proper user name or password we can able to access our gamil inbox information.
 - By declaring data member (variable) as private we can achive data hidding.
-  ```java
+
+```java
    class Student {
     private int age;  // Data Hiding: Age is private
     // Setter method to set age
