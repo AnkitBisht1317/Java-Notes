@@ -2,7 +2,7 @@
 - The process of binding data and corresponding method into a single unit is nothing but Encapsulation.
 - If any component follows data hodding and abstraction such type of component said to be encapsulation component.
 
-                                       ### [Encapsulation = Data Hidding + Abstraction]
+                                         [Encapsulation = Data Hidding + Abstraction]
 - The main advantage of encapsulation are achive security, enhancement become easy, maintainability of application.
 - The main advantage of encapsulation is we can achive security but disadvantage of encapsulation is it increase length of the code and slow down excution.
 ```java
