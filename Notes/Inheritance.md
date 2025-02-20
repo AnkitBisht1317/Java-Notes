@@ -21,13 +21,13 @@ public class Main {
     }
 }
 ```
-- child refrence we called parent or child but the refrence we only all only parent not child.
+- Child refrence we called parent or child but the refrence we only all only parent not child.
 - Every class in java is a child class of object either directly or indirectly so that object class method available every java class.
 
 ## Types Of Inheritance : 
 Java supports three types of inheritance:
 
-1. Single Inheritance
+##### 1. Single Inheritance
 A child class inherits from a single parent class.
 
 ```java
@@ -50,7 +50,7 @@ public class Main {
 }
 ```
 
-2. Multilevel Inheritance
+##### 2. Multilevel Inheritance
 A child class inherits from a parent class, and another child class inherits from it (forming a chain).
 
 ```java
@@ -79,7 +79,7 @@ public class Main {
 }
 ```
 
-3. Hierarchical Inheritance
+##### 3. Hierarchical Inheritance
 A single parent class has multiple child classes.
 
 ```java
