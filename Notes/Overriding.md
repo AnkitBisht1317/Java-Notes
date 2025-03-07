@@ -31,11 +31,14 @@ public class Main {
 - Based on our requriment we can define excatly same private method in child class it is valid but not overriding
 - parent class abstract method we should overred in child class to implementation.
 - while overriding we can not reduce scope of access modifier but we increase the scope.
-  
-                                parent | child
-                                public | public
-                             protected | protected/public
-                               default | default/protected/public
+
+                    ------------------------------------------------
+                    |            parent | child                     |
+                    -------------------------------------------------
+                    |            public | public                    |
+                    |         protected | protected/public          |
+                    |           default | default/protected/public  |
+                    -------------------------------------------------
 
 - We can not override static method on non-static otherwise we will get complie time error , vice versa.
 - if both static then no complie time error , but it is not overriding it known method hiding.
