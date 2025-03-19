@@ -55,9 +55,9 @@ class Student {
 ```
   |                        Super(),This()                                            |                                Super , this                                |
   |----------------------------------------------------------------------------------|----------------------------------------------------------------------------|
-  | - These are constructor called to call super class and current class constructor.| - These are keyword to refer super class and current class Instance member.|
-  | - Use in only in constructor in first line.                                      | - Use in anywhere but not static area.                                     |
-  | - Only one time in constructor.                                                  | - we can use any number of time.                                           |
+  | These are constructor called to call super class and current class constructor.|  These are keyword to refer super class and current class Instance member.|
+  | Use in only in constructor in first line.                                      |  Use in anywhere but not static area.                                     |
+  | Only one time in constructor.                                                  |  we can use any number of time.                                           |
  
   ### 2. Parameterized Constructor :
   - With a class we declare multiple constructor and all these constructor have same name but different type argument hence all these constructor consider as parameterized constructor.
