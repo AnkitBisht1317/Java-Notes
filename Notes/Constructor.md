@@ -26,7 +26,7 @@ class Student {
 ## Type Of Constructor : 
 - There are two type of constructor
 
-### 1.Default Constructor :
+### 1. Default Constructor :
 - Compiler is responsible to generate default constructor(NOT JVM) if we wan't writing any constructor then only complier generate default constructor.
 - It is always no argument constructor.
 - The access modifier of default constructor excatly same as class(Public or default).
@@ -53,14 +53,12 @@ class Student {
     }
 }
 ```
-  |---------------------------------------------------------------------------------------------------------------------------------------------------------------|
   |                        Super(),This()                                            |                                Super , this                                |
   |----------------------------------------------------------------------------------|----------------------------------------------------------------------------|
   | - These are constructor called to call super class and current class constructor.| - These are keyword to refer super class and current class Instance member.|
   | - Use in only in constructor in first line.                                      | - Use in anywhere but not static area.                                     |
   | - Only one time in constructor.                                                  | - we can use any number of time.                                           |
-  |----------------------------------------------------------------------------------|----------------------------------------------------------------------------|
-
+ 
   ### 2. Parameterized Constructor :
   - With a class we declare multiple constructor and all these constructor have same name but different type argument hence all these constructor consider as parameterized constructor.
   - Hence Overloading concept applicable for constructor.
