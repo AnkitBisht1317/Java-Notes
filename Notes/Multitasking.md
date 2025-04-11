@@ -1,12 +1,12 @@
 # MULTITASKING - 
 - Excuting servral task at a time is a concept of multitasking there are 2 type of multitasking.
-## 1.Process Based - 
+## 1. Process Based - 
 - Ecxuting servral task at a time where each task is a seprate independent program (process) is called process baseed multitasking.
      - Example- java program at editor,listen audio song from same system and download a file from same system.
 - All these task will excuted at a time and indepandent of each other hence it is process based multitasking.
 - process based multitasking best suitable at OS level.
 
-## 2.Thread Based Multitasking - 
+## 2. Thread Based Multitasking - 
 - Excuting sevral task at a time where each task is sperate independent part of same program is called thread based multitasking, and each indepandent part is called thread.
 - Whether is process based or thread based the objective of multitasking is to reduced respnes time of system and improve performance.
 - The main improtant application area of multithreading are -
@@ -19,7 +19,7 @@
 # DEFINING A THREAD - 
 - Define a thread using two ways.
 
-## 1.By Extending Thread Class - 
+## 1. By Extending Thread Class - 
 
 ```java
 class MyThread extends Thread {
@@ -45,11 +45,11 @@ class MyThread extends Thread {
 - It is resposible to scheduler thread that is, if multiple thread are waking to get chance of exution when which order thread will excuted will be decided by thread scheduler.
 - We can not accept which algorithm follow by thread scheduler is vaild from JVM to JVM
 
-#### ii) Diffrence between t.start() v/s t.run -
+#### ii) Diffrence between t.start() v/s t.run()-
 - In the t.start() a new thread will be created which is responsible for excution of run method.
 - But in the case of t.run() a new thread not will be created and run() method will be excuted just like a normal method call by main thread.
 
-#### iii) Importance of thread class start method - 
+#### iii) Importance of thread class start() - 
 - Thread class start method is responsible to register thread with thread scheduler and all other mandatory activity hence with excuted thread class start method there is no chance of start a new thread in java.
 
 #### iv) Overloading Run Method Possible - 
@@ -91,7 +91,7 @@ class MyThread extends Thread {
 }
 ```
 
-## 2.By Implimenting Runnable Interface - 
+## 2. By Implimenting Runnable Interface - 
 - We can define a thread by implementing Runnable Interface.
 - Runnable interface present in java.lang package and it contain only one method (that is run() method).
 
