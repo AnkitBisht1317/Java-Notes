@@ -157,3 +157,143 @@ public class ThreadNameDemo {
 - Where 1 is min priorite and 10 is max prioritie
 
 # Prevent A Thread Exceution :
+- Prevent a thread execution by using a following method
+
+### i) Yield() - 
+- Yield() method caused to pass current executing thread to give the waiting thread of same priority.
+- If there is no waiting or all waiting thread has low priority then same thread can contiuous it execution.
+- If multiple thread are waking same priority then which waiting thread get chance we can not know it depend on thread scheduler.
+
+<img width="1024" height="343" alt="Image" src="https://github.com/user-attachments/assets/db6f906d-3fa2-4441-8a30-d74f3ee04114" />
+
+- Suppose aapke system me ek background antivirus scan chal raha hai (low priority), aur user ne video editing ya Zoom call start kiya (higher or same priority).
+- Ab antivirus scan Thread.yield() call karta hai so that:
+- “Main thodi der ke liye ruk jata hoon, let CPU give time to that Zoom call.”
+```java
+class MyThread extends Thread {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("child");
+            Thread.yield(); // ------------------(i)
+        }
+    }
+}
+public class YieldExample {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        t1.start();
+         for (int i = 1; i <= 5; i++) {
+            System.out.println("main");
+        }
+    }
+}
+```
+- in above program if we comment line (i) then both thread execute at a time and we can accept which thread complete first.
+```
+child
+child
+child
+child
+child
+main
+main
+main
+main
+main
+```
+- If we do not comment line(i) then child always call yield method. because of that main thread will chance more no of chance and chance of main complete first high.
+```
+child
+main
+child
+main
+child
+main
+child
+main
+child
+main
+```
+
+### ii) Join() 
+- If a thread want to wait until completing same other thread, then we should go join method.
+- If thread t1 want to wait until completing t2 then t1 called t2.join().
+- If t1 executed t2.join() then t1 will enter into waiting state until t2 complete. once t2 complete then t1 can contioune it's execution.
+- Suppose aap ek software installer run kar rahe ho, jisme:
+     - Step 1: Install Java
+     - Step 2: Install your App (needs Java)
+- App installer thread calls javaInstaller.join();:
+- “Main tab tak wait karunga jab tak Java properly install nahi ho jata.”
+```java
+class MyThread extends Thread {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("child");
+        }
+    }
+}
+
+public class JoinExample {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        t1.start();
+
+        try {
+            t1.join(); // main waits until t1 completes
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        }
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("main");
+        }
+    }
+}
+```
+
+### iii) Sleep()
+- If a thread don't want to perform any operation for particular amount of time than we should go for sleep() method.
+- Every sleep method has throws intereptException.
+```
+public class SleepRetryExample {
+
+    public static void main(String[] args) {
+        int maxRetries = 3;
+        int retryCount = 0;
+
+        while (retryCount < maxRetries) {
+            if (connectToServer()) {
+                System.out.println("✅ Connected to server!");
+                break;
+            } else {
+                retryCount++;
+                System.out.println("❌ Connection failed. Retrying in 5 seconds...");
+
+                try {
+                    Thread.sleep(5000); // wait before retry
+                } catch (InterruptedException e) {
+                    System.out.println("Retry interrupted");
+                }
+            }
+        }
+
+        if (retryCount == maxRetries) {
+            System.out.println("🚫 Could not connect after " + maxRetries + " attempts.");
+        }
+    }
+
+    // Simulating server connection
+    public static boolean connectToServer() {
+        // Always returns false in this example (simulate failure)
+        return false;
+    }
+}
+```
+- Program me maximum 3 baar server se connect karne ki koshish ki gayi hai. (maxRetries = 3)
+- Har baar jab connectToServer() method false return karta hai (i.e., connection fail hota hai), to:
+- Program retryCount++ karta hai.
+- Fir 5 seconds ke liye rukta hai using:
+- Thread.sleep(5000);
+- Ye delay ensure karta hai ki program baar-baar instantly request na kare.
+- Agar 3 attempts ke baad bhi connection nahi hota,
+- "🚫 Could not connect after 3 attempts."
