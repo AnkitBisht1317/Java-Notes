@@ -11,4 +11,8 @@
 ![Image](https://github.com/user-attachments/assets/51d454f9-6db0-4958-ba7f-56c84cfce191)
 
 ## Syenchronized Block 
+- If very few code required synchronition then it is not recommand to decalre entire method to synchroized, we have to enclosed those few line of code by using synchronized block.
+- The main advantage of synchroized block over synchronized method is it reduced waiting time of thread and impore performance of system.
+
+## InterThread Communication
 - 
