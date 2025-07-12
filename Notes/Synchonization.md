@@ -15,4 +15,23 @@
 - The main advantage of synchroized block over synchronized method is it reduced waiting time of thread and impore performance of system.
 
 ## InterThread Communication
-- 
+- Two thread can communicate with each other by using wait(), notify() and notifyAll() method.
+- The wait() method is used in multithreading when a thread wants to pause its execution and release the lock of the object it holds.
+- The thread that is waiting for some condition (like resource availability or update) should call wait(), releasing the lock and entering the waiting state.
+- The thread that performs the update is responsible for calling notify(). This notifies the waiting thread, which then resumes execution and uses the updated data.
+
+<img width="2471" height="1151" alt="Image" src="https://github.com/user-attachments/assets/703c8771-69dc-44b0-b90c-418355ffb400" />
+
+#### Notify vs NotifyAll
+- "We can use the notify() method to give notification to only one waiting thread. If multiple threads are waiting, only one of them will be notified, and the remaining threads will continue waiting until further notifications are received.
+- Which thread will be notified, we cannot predict — it depends on the JVM.
+- We can use notifyAll() to send a notification to all waiting threads of a particular object. Even though multiple threads are notified, they execute one by one because each thread requires the object's lock, and only one thread can hold the lock at a time.
+
+## DeadLock 
+- If two thread waiting for each other forever such type of infinite waiting is called deadlock.
+- Synchronized keyword is only reason for deadlock situation heance while using synchronized keyword we have to take special case.
+- There are no resoution techanique for deadlock but some prevention technique are avaiable.
+
+#### DeadLock vs Stravation
+- Long waiting of a thread where waiting never ends is called deadlock.
+- whereas long waiting of a thread where waiting end certain point is called stravation.
