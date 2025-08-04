@@ -74,4 +74,70 @@ class Outer {
 ```
 
 ### iii) Anonymous Inner Class
-- 
+-  Sometime we declare inner class without name such type of inner class are called anonymous inner class.
+-  THe main purpose of anonymous inner class is just for instance use (one time use).
+-  Based on declareation and behaviour there are 3 typr of anonymous calsses.
+
+```java
+interface Greeting {
+    void sayHello();
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Anonymous class implementing Greeting interface
+        Greeting greeting = new Greeting() {
+            @Override
+            public void sayHello() {
+                System.out.println("Hello from anonymous class!");
+            }
+        };
+
+        greeting.sayHello(); // Output: Hello from anonymous class!
+    }
+}
+```
+
+### iv) Static inner Class
+- Sometimes we can declare inner class with static modifier such type inner class are called static nested class.
+- In the case of normal or regular inner class without exiting outer class object there is no chance of exiting inner class object that is inner class object is strongly assosicated with outer class object.
+- But in the case of static nasted class without existing outer class object there may be chance of nested class object hence static class object is not strongly associted with outer class object.
+
+```java
+public class OuterClass {
+    static int outerData = 50;
+
+    // Static inner class
+    static class InnerClass {
+        void display() {
+            System.out.println("Outer data: " + outerData);
+        }
+    }
+
+    public static void main(String[] args) {
+        // Creating object of static inner class without OuterClass object
+        OuterClass.InnerClass inner = new OuterClass.InnerClass();
+        inner.display(); // Output: Outer data: 50
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
